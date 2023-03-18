@@ -5,10 +5,16 @@ public class Calories {
 
     public void addCaloriesItem(String food, Integer amount) {
         calories.put(food, amount);
-    }
+    }//per 100g
 
-    public Object getCalories() {
-        return calories.clone();
+     public int getCalories(String key) {
+        return calories.get(key);
     }
-
+    public int getTotal(int... calories) {
+        int total = 0;
+        for(int cals: calories) {
+            total += cals;
+        }
+        return total;
+    }
 }
